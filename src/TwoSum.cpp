@@ -1,4 +1,3 @@
-// Source : https://oj.leetcode.com/problems/two-sum/
 // Author : miea
 // Date   : 2014-10-25
 

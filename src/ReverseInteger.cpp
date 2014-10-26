@@ -53,9 +53,9 @@ public:
 	}
 };
 
-int main()
-{
-	Solution so;
-	so.reverse(-10);
-	return 0;
-}
+//int main()
+//{
+//	Solution so;
+//	so.reverse(-10);
+//	return 0;
+//}
