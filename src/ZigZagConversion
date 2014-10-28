@@ -18,73 +18,38 @@
 
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class Solution {
 public:
 	string convert(string s, int nRows) {
-		if(s.empty())
-		{
-			return "";
-		}
 		int len = s.size();
-		int firstLen = 0;
-		int firstGroup = 0;
-		std::string strRet ="";
-		strRet.resize(len);
-
-		firstGroup = nRows + nRows / 2;
-
-		if(len%firstGroup != 0)
+		if(len < nRows || nRows == 1)
 		{
-			firstLen = len / firstGroup + 1;
+			return s;
 		}
-		else
+		
+		string strRet = "";
+		vector<string> vecRet(nRows);
+		int step = 0;
+		int index = 0;
+		for(int i = 0; i < len; i++)
 		{
-			firstLen = len / firstGroup;
-		}
+			if(index == nRows - 1)
+				step = -1;
+			if(index == 0)
+				step = 1;
 
-		int turn = 0;
-		int loop = 0;
-		for(int i = 0; i < len; )
-		{
-			if(turn % 2 == 0)
-			{
-				loop = firstGroup;
-				for(int j = turn; j < len; j+=loop, i++)
-				{
-					strRet[i] = s[j];
-				}
-			}
-			else
-			{
-				for(int j = turn; j < len; )
-				{
-					strRet[i] = s[j];
-					j+= nRows - (turn + 1)/2;
-					i++;
-					if(j > len)
-						break;
-					strRet[i] = s[j];
-					j+= nRows/2 + (turn +1)/2;
-					i++;
-				}
-			}
-
-			turn++;
+			vecRet[index]+=s[i];
+			index+=step;
 		}
 
+		for(int j = 0; j < vecRet.size(); j++)
+		{
+			strRet.append(vecRet[j]);
+		}
 		return strRet;
 	}
 };
-
-
-int main()
-{
-	Solution so;
-	string ret = so.convert("ABC", 2);   
-	return 0;
-}
-
-//PAHNAPLSIIGYIR
