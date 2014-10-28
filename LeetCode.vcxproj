@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClCompile Include="src\LongestSubstringWithoutRepeatingCharacters.cpp" />
     <ClCompile Include="src\MedianofTwoSortedArrays.cpp" />
+    <ClCompile Include="src\PalindromeNumber.cpp" />
     <ClCompile Include="src\ReverseInteger.cpp" />
     <ClCompile Include="src\TwoSum.cpp" />
   </ItemGroup>
