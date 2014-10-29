@@ -48,9 +48,9 @@ public:
 };
 
 
-int main()
-{
-	Solution so;
-	bool ret = so.isPalindrome(1001);
-	return 0;
-}
+//int main()
+//{
+//	Solution so;
+//	bool ret = so.isPalindrome(1001);
+//	return 0;
+//}

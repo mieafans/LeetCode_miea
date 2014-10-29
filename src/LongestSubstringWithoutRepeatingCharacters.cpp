@@ -58,10 +58,10 @@ public:
 	}
 };
 
-int main()
-{
-	Solution so;
-	int ret = so.lengthOfLongestSubstring("endtomfgdwdwfcgpxiqvkuytdlcgd");
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//	Solution so;
+//	int ret = so.lengthOfLongestSubstring("endtomfgdwdwfcgpxiqvkuytdlcgd");
+//	system("pause");
+//	return 0;
+//}
