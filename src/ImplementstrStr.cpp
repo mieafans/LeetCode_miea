@@ -20,7 +20,60 @@ using namespace std;
 
 class Solution {
 public:
-	int strStr(char *haystack, char *needle) {
+int strStr(char *haystack, char *needle) {
+		if(haystack == NULL || needle == NULL)
+		{
+			return -1;
+		}
+		if(*needle == '\0')
+		{
+			return 0;
+		}
+		char* p1 = haystack;
+		char* p2 = needle;
+		int len2 = strlen(needle);
+		int len1 = strlen(haystack);
+
+		while(*p1 != '\0')
+		{
+			if(*p1 != *p2)
+			{
+				p1++;
+				continue;
+			}
+			if(p1 + len2 <= haystack + len1 && memcmp(p1, p2, len2) == 0)
+			{
+				break;
+			}		  
+
+			p1++;
+		}
+
+		if(*p1 != '\0')
+		{
+			return p1 - haystack;
+		}
+		return -1;
+	}
+
+	int strStr1(char *haystack, char *needle) {
+		if(haystack == NULL || needle == NULL)
+		{
+			return -1;
+		}
+		if(*needle == '\0')
+		{
+			return 0;
+		}
+
+		char* ret = strstr(haystack, needle);
+		if(ret == NULL)
+		{
+			return -1;
+		}
+		return (ret - haystack);
+	}
+	int strStr2(char *haystack, char *needle) {
 		if(haystack == NULL || needle == NULL)
 		{
 			return -1;
